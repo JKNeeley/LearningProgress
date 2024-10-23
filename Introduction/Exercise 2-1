@@ -1,0 +1,87 @@
+# Working with projects in your workspace
+## Importing an OpenEdge project
+- Follow these steps to import the Server project.:
+-- Select File > Import….
+-- Select General > Existing Projects into Workspace. And click Next.
+-- Select Select archive file.
+-- Click the browse button and navigate to C:\progress_education\openedge\DeveloperStudio\Exercise and select Server.zip.
+-- Click Open.
+-- Select Server in the Projects box.
+-- Click Finish.
+- When you complete the import, you will see the imported project in your workspace and see that an AVM for the Server project has started. There will be errors (red “X”) in the code for this project. This is because this project requires a connection to the database.
+- Click the Problems tab in the lower part of the window. This view lists all compilation errors for the workspace when it was recompiled. You can hover your mouse pointer over the errors to see their details.
+- Double-click any error in the Problems view. It opens the corresponding file in OpenEdge Editor.
+- If you hover your mouse pointer over the red “X” to the left of the line with the error, the details of the error are also shown in OpenEdge Editor. You will correct this error later in this Guided Exercise.
+- Set your workspace so that whatever file you currently have selected in OpenEdge Editor will be selected in Project Explorer by selecting the Link with Editor icon in Project Explorer:
+- Close the procedure file, GetFirstCustomerName.p, by clicking the “X’ in the tab for the file.
+## Creating a new project and importing a file
+- Create an OpenEdge project named Client
+-- Navigate to File > New.
+-- Notice that in Developer Studio you can create a number of resources that are OpenEdge-specific for ABL development tasks. In this case, select OpenEdge Project.
+-- Notice that you can create server, client, or general OpenEdge projects. Each type of OpenEdge project contains its own specific facets. Here, create a General project.
+-- Notice also that when you create a project, Developer Studio sets the location of the project to the same location as the workspace.
+-- Enter Client as the project name and click the General icon to create an OpenEdge Basic project.
+-- Click Next.
+-- Next, specify Use project-specific AVM and Use separate source and r-code directories and then type src in the Source directory and bin in the R-code directory field.
+-- Click Next.
+-- This is a new project, so keep the default PROPATH settings for now.
+-- Click Next.
+-- Since this project contains client code, do not specify a connection to the database.
+-- Click Finish.
+-- Here you should see your newly created project, with src and bin folders, in Project Explorer The src folder will contain ABL source code.
+- Add a subfolder to the src folder of the Client project as follows:
+-- In Project Explorer, navigate to the src folder under the Client project.
+-- Right-click src and then select New > Folder.
+-- Enter Test as the name of the new folder.
+-- Click Finish.
+- Import an ABL source file into your project from C:\progress_education\openedge\DeveloperStudio\Exercise. The source file is: SimpleClient.p.
+-- Launch Windows Explorer and browse to C:\progress_education\openedge\DeveloperStudio\Exercise.
+-- Select SimpleClient.p. Then drag and drop the file onto the Client > src > Test folder in the Project Explorer view of Developer Studio.
+-- Select Copy files and then click OK.
+-- Clean and recompile the entire workspace:
+--- Select Project > Clean….
+--- Click Clean.
+## Starting the Database Server and configuring the Server project that uses it
+- Select Start > Progress > Proenv 12.2 (64 bit).
+-- A new window that is set up for a Progress OpenEdge session opens. By default, C:\OpenEdge\WRK is the OpenEdge working directory where the database will be created.
+- Type the following command to create the sports2020 database: prodb sports2020 sports2020
+-- The database files are now added to the C:\OpenEdge\WRK directory and the database is ready for starting. All the database-related file names begin with sports2020.
+- Type the following command: proserve sports2020 -H localhost –S 9999
+-- The Database Server for this database will start. When the Database Server is started, a sports2020.lk file is created; it remains in the directory with the other database files as long as the Database Server runs.
+- Close the Proenv window by clicking the “X” in the top right corner or by typing exit in the window. The Database Server will continue to run.
+- In Project Explorer, right-click the Server project and then select Properties.
+- Navigate to Progress OpenEdge > Database Connections.
+- Click the link Configure database connections.
+- Click New… to open the Add Connection Profile wizard.
+- Enter the connection name, Sports2020DB.
+- In the Physical name area:
+-- Click the Browse button and then navigate to and select C:\OpenEdge\WRK\sports2020.db.
+-- Click Save.
+- Specify the host name as localhost.
+- Specify 9999 as the port number. If port 9999 is unavailable on your system, use a different port number. It must be the same port number that you specified when you started the Database Server.
+- Click the Test Connection button.
+- The wizard prompts you about which project in your workspace to use for the test because, to run the code to test the connection, you need an AVM. Select the Server project and then click OK.
+- The test should complete successfully. If it does not complete successfully, you need to investigate. Is the Database Server running? Is the port number correct for the connection? After the test completes successfully, click OK.
+- Back in the Add OpenEdge Database Connection window, click Next. The Define a SQL connection window opens.
+- Click Next. The Add SQL Connection Profile window opens. Here you retain the values that have been automatically set for you by the wizard.
+- Click the Test Connection button. Then click OK when the connection succeeds. Again, if the connection does not succeed, you must investigate the problem.
+- Click Next. The Define Database Server Configuration window opens. Notice that Auto-start database server is selected. Leave that box selected; Developer Studio will automatically start the Database Server for you. Do not select Auto-shutdown database server.
+- Click Finish.
+- After the configuration is completed, you see the connection string in the lower part of the Database Connections window.
+- Click Apply and Close.
+- You are now back in the Database Connections window of the Server project.
+- Select the connection profile you just configured.
+- Click Apply and Close to complete the configuration.
+- You will notice in the Console that the AVM for the Server project restarts. This is because it must start an AVM that has an active connection to the Database Server.
+- Now that the Server project has a connection to the sports2020 database, the code in this project should compile without errors. Clean the workspace to recompile all files:
+-- Select Project > Clean….
+-- Click OK.
+- You should now see that all compilation errors have been cleared since the project now has a connection to the database.
+## Adding PROPATH to the Client project
+- In Project Explorer, right-click the Client project and then select Properties.
+- Navigate to Progress OpenEdge > PROPATH.
+- Click Add Workspace Directory….
+- In the Select PROPATH Directory window, select the bin directory of the Server project.
+- Click OK.
+- Your PROPATH for the Client Project should now appear as like this:
+- Click Apply and Close.
