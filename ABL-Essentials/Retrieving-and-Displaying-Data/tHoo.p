@@ -1,4 +1,3 @@
-
 /*------------------------------------------------------------------------
     File        : tHoo.p
     Purpose     : Display the names of customers whose name begins with “Hoo”
