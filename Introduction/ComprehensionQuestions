@@ -1,0 +1,40 @@
+# Intro to POE
+Which languages can Developers use to develop clients that can access an ABL application services?
+- Java, ABL, VB.NET, C#
+Which native user interface presents a UI in graphical widgets, including windows, dialog boxes, and graphical controls that are supported with an event-driven programming model?
+- ABL GUI client
+Match each term to its description.
+- Progress Developer Studio for OpenEdge: An integrated ABL development environment, which consists of a set of editors, views, dialogs, and wizards that run in the Eclipse framework.
+- Progress Application Server (PAS) for OpenEdge: An application server component of an OpenEdge business application.
+- OpenEdge Command Center: A cloud-ready OpenEdge management console capable of managing multiple OpenEdge resources and versions.
+- Advanced Business Language: The development language used in OpenEdge.
+
+# Intro to OEDB
+Identify the components of a relational database.
+- Table, Index, Record (row), Field (column)
+Which of the following characters do metaschema tables begin with?
+- (_) underscore
+Which of the following are described by the database schema?
+- Database structure, Databse tables, Table fields, Indexes ✓
+
+# Intro to Progress Developer Studio for OE
+## Progress Developer Studio for OE
+T/F: To modify a workspace preference, select Preferences from the Project menu.
+- False
+T/F: To format the ABL code in Progress Developer Studio for OpenEdge on the Code Formatter page, the options are available on the Control Statements tab.
+- True
+T/F: To have your projects always have the latest compiled code, select the Compile on save if required checkbox.
+- True
+## Projects
+Place each task into correct sequence for setting up an application in Developer Studio.
+- Create Workspace, Create Project, Import an ABL procedure file
+Which properties do you configure on a project-by-project basis?
+- Database Connection, PROPATH
+## OE Editor Perspective
+As you enter ABL code in OpenEdge Editor, what feedback do you receive if the code you typed has an error?
+- A red "X" appears in the left margin of the file where the error has been detected.
+- The error is displayed in the Problems view.
+- A red "X" appears in Project Explorer for the file with the error.
+## Managing Resources
+In Developer Studio, how do you share your code with other developers?
+- Create an archive to share with other developers.
