@@ -1,7 +1,7 @@
 
 /*------------------------------------------------------------------------
     File        : tHoo.p
-    Purpose     : Find items that might be used in water sports and display their name and description.
+    Purpose     : Display the names of customers whose name begins with “Hoo”
     Author(s)   : Jade Neeley
   ----------------------------------------------------------------------*/
 
