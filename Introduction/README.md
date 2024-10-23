@@ -1,3 +1,6 @@
+# Setup
+Download and save the developerstudio folder and it's contents to C:\progress_education\openedge.
+
 # Introduction to Progress OpenEdge
 Introduced to Progress OpenEdge, its components, tools, and key features. Explore how various types of clients can connect to an OpenEdge database or a PAS for OpenEdge instance.Learn about the features of OpenEdge 12.
 - Describe components of OpenEdge.
