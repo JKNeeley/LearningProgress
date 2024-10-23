@@ -5,6 +5,6 @@
     Author(s)   : Jade Neeley
   ----------------------------------------------------------------------*/
 
-for each Customer where Balance >= 30000:
-    display Customer.Name Customer.Balance .
+for each Order where Order.ShipDate > 6/1/1998:
+    display Order with 1 column .
 end .
