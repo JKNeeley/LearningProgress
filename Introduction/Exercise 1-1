@@ -1,0 +1,37 @@
+# Setting up your Developer Studio workspace preferences
+## Starting Developer Studio for the first time
+- Start Developer Studio from the Start Menu.
+-- Go the Start Menu.
+-- Select All Programs > Progress > Developer Studio 12.2 (64 bit).
+- You are presented with the Workspace Launcher window that displays the default workspace location.
+-- Modify the location of workspace to: C:/progress_education/OpenEdge/DeveloperStudio/workspace
+-- Specify that you want to use this as the default setting.
+-- Click Launch.
+- When you start Developer Studio for the first time, from the Welcome window for Developer Studio you can explore the overview, tutorials, documentation, and samples. Click the Workbench link to view the workbench that you will use for this course.
+- Explore the menu items.
+- View the workspace preferences for OpenEdge:
+-- Select Window > Preferences.
+-- Select and expand Progress OpenEdge in the left panel.
+-- View the startup properties used by the workspace. If the port numbers specified conflict with port numbers you use on your machine, modify them.
+- View other properties for your workspace. You will not be able to define database connections yet as you have not created a project. When you complete exploring the properties for your workspace, click Apply and Close to return to the workspace.
+## Setting workspace preferences for ABL development
+- In your newly created workspace, select Window > Preferences.
+- Select Progress OpenEdge in the left panel.
+- Modify Editor preferences as follows:
+-- In the left panel, click Editor under Progress OpenEdge.
+-- Under Indentation, select Enable auto indent on paste.
+-- Under Case, select the Lower button.
+-- Under As you type, select the Expand keywords and Case keywords boxes.
+-- Select the Apply keyword(s) casing on save box.
+-- Click Apply.
+- Modify the Editor’s build preferences as follows:
+-- In the left panel, expand the Editor area under Progress OpenEdge by clicking > to the left of Editor.
+-- Select Build under Editor in the left panel.
+-- Select all the boxes under Actions and Syntax check.
+-- Click Apply.
+- Modify preferences to show line numbers as follows:
+-- In the left panel, expand the General > Editors area.
+-- Select Text Editors in the left panel.
+-- Select the Show line numbers box.
+-- Click Apply and Close.
+
