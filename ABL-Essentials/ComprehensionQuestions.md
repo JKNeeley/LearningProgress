@@ -88,6 +88,22 @@ How does the ASSIGN statement affect data?
 What is the effect of deleting a parent record without deleting its children?
 - You create orphan records that can cause run-time errors, clutter the database, and increase overhead.
 
+## Managing Transactions
+Which ABL tools are available to determine whether a transaction is active?
+- compile listing, transaction function, debugger
+
+Which ABL blocks can take the TRANSACTION option?
+- REPEAT, FOR EACH, DO
+
+Which ABL blocks have the transaction property?
+- REPEAT, FOR EACH, DO ON ERROR
+
+Which ABL statements can update the database?
+- CREATE, DELETE, ASSIGN
+
+Which option on the DEFINE VARIABLE statement prevents the AVM, at run time, from undoing the variable in a transaction?
+- NO-UNDO
+
 
 
 
