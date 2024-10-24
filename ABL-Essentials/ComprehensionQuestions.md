@@ -54,12 +54,26 @@ How would you use the NUM-ENTRIES function?
 When is a CASE statement used instead of the IF...THEN...ELSE statement?
 - There are more than two conditional branches, and you want to execute a statement or block for each condition.
 
+## Using Queries
+What does the OPEN QUERY statement do?
+- Creates a results list of ROWIDs of the records that satisfy the query 
 
+How do you retrieve records from a results list?
+- use a get statement
 
+Rewrite the following ABL statement using a shorter syntax:.
+```
+OPEN QUERY qQuery FOR EACH Order WHERE Order.OrderNum = Orderline.OrderNum
+```
+- OPEN QUERY qQuery FOR EACH Order OF Orderline
 
+How can a query results list be accessed randomly?
+- Define a query with the SCROLLING option, and then use REPOSITION and GET.
 
-
-
+Which of the following is true about ROWID?
+- A pointer to a record’s location in the database 
+- A function that returns a pointer to a record
+- A data type for variables that store row IDs
 
 
 
