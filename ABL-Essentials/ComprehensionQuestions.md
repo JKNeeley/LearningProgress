@@ -104,8 +104,27 @@ Which ABL statements can update the database?
 Which option on the DEFINE VARIABLE statement prevents the AVM, at run time, from undoing the variable in a transaction?
 - NO-UNDO
 
+## Managing Record Locking
+Which of the following prevent a record from being changed by another user?
+- EXCLUSIVE-LOCK, SHARE-LOCK
 
+Which type of lock allows you to upgrade to an exclusive lock?
+- SHARE-LOCK
 
+Which type of lock cannot be used by users to retrieve a record that is locked by another user using a SHARE-LOCK?
+- EXCLUSIVE-LOCK
+
+What are the different locking strategies provided by ABL?
+- Optimistic, Pessimistic, Default
+
+Which locking strategy retrieves a record with an EXCLUSIVE-LOCK at run time?
+- pessimistic locking
+
+What happens when a deadlock occurs?
+- None of the users can continue processing because each user has the same record SHARE-LOCK and each user is trying to acquire an EXCLUSIVE-LOCK to update the record.
+
+What are the benefits of the RELEASE statement?
+- RELEASE downgrades a lock to NO-LOCK and removes the current record from the record buffer
 
 
 
