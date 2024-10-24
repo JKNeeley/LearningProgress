@@ -126,9 +126,51 @@ What happens when a deadlock occurs?
 What are the benefits of the RELEASE statement?
 - RELEASE downgrades a lock to NO-LOCK and removes the current record from the record buffer
 
+## Handling Errors
+When an error occurs at runtime, the AVM undoes the processing done in a procedure, trigger, FOR block, or a REPEAT block. For the RETURN keyword, what action does the AVM take at runtime, after undoing processing?
+- Returns control to the calling procedure. If there is no calling procedure, returns to the editor.
 
+When an error occurs at runtime, the AVM undoes the processing done in a procedure, trigger, FOR block, or a REPEAT block. For the RETRY keyword, what action does the AVM take at runtime, after undoing processing?
+- Repeats the same iteration of the current or specified block.
 
+When an error occurs at runtime, the AVM undoes the processing done in a procedure, trigger, FOR block, or a REPEAT block. For the LEAVE keyword, what action does the AVM take at runtime, after undoing processing?
+- Leaves the current or specified block and continues executing the rest of the procedure code.
 
+What is the default response when a QUIT condition occurs in a block with error processing properties?
+- Save (commit) the current transaction and then return to the operating system or to the editor.
+
+What is the default response when a STOP condition occurs in a block with error processing properties?
+- UNDO the transaction block, and RETRY the startup procedure (if exists)
+
+What is the default response when an ENDKEY condition occurs in a block with error processing properties?
+- UNDO, LEAVE the nearest procedure, REPEAT or FOR EACH block.
+
+What is the default response when an END-ERROR condition occurs in a block with error processing properties?
+- UNDO, LEAVE on the first screen interaction in a block (acts as an ENDKEY)
+- UNDO, RETRY on subsequent screen interactions (acts as an ERROR).
+
+What is the default response when an ERROR condition occurs in a block with error processing properties?
+- UNDO, RETRY the nearest procedure, REPEAT, or FOR EACH block
+- UNDO, and RETURN ERROR if inside a database trigger
+
+Which of the following blocks is always executed: catch, throw, no-error, finally?
+- FINALLY
+
+Which of the following error class or interface can catch all possible error types?
+- Progress.Lang.Error
+
+Which of the following class can be used to write user-defined errors?
+- Progress.Lang.AppError
+
+Which of the following class represents the error object thrown by the AVM, when an ABL statement raises an error condition?
+- Progress.Lang.SysError
+
+Which of the following is true about CATCH blocks?
+- An associated block can have multiple CATCH blocks representing different sub-error classes.
+- A CATCH block can be nested inside another catch block.
+
+When an error occurs, what is the precedence used by the AVM to look for an error handler?
+- NO-ERROR option, CATCH block, Explicit ON-ERROR, Implicit ON-ERROR
 
 
 
