@@ -1,6 +1,6 @@
 /*------------------------------------------------------------------------
     File        : tMidnight.p
-    Purpose     : Write a procedure to calculate how many seconds until midnight tonight. Display the results.
+    Purpose     : Write a procedure to calculate and display the number of hours, minutes, and seconds until midnight.
     Author(s)   : Jade Neeley
   ----------------------------------------------------------------------*/
 
