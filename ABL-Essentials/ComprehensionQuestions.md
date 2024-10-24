@@ -191,30 +191,109 @@ Which of the following statements resets the handle variable "hEmpLib" to the un
 Why should you delete persistent procedures?
 - Avoid memory leaks and free up system resources;
 
+## Integrating Business Logic into an Application
 
+What type of activities are performed in a user interface?
+- Prompt the user for input.
+- Change the look and feel of the data display.
+- Hide or view data.
+- Display multiple windows or dialog boxes.
 
+What type of activities are performed by business logic?
+- Retrieve data from the database.
+- Write data to the database.
+- Validate data entered.
 
+For the following scenario indicate whether it is business logic, UI logic, or both. Scenario: Change the background color of a field based on the customer’s credit rating.
+- both
 
+Review the following trigger code for a button, based on the distributable application design guidelines and select the design guideline the code violates.
+```
+ON CHOOSE OF BUTTON btnCustomer
+DO:
+FIND customer WHERE CustNum = fiCustNumber.
+.
+.
+.
+END.
+```
+- To put data access logic in a procedure, separate from the UI
 
+Review the following code for a database trigger, based on the distributable application design guidelines and select the design guideline the code violates.
+```
+TRIGGER Procedure FOR Delete OF Customer.
+/* Variable Definitions */
+DEFINE VARIABLE answer AS LOGICAL.
+/* Customer record cannot be deleted if outstanding invoices are found */
+FIND FIRST invoice OF customer NO-ERROR. 
+IF AVAILABLE invoice THEN 
+DO:
+  IF invoice.amount <= invoice.totalpaid + invoice.adjustment THEN
+  DO:
+    MESSAGE "Invoice OK, looking for Orders..." VIEW-AS ALERT-BOX INFORMATION BUTTONS OK.
+    FIND FIRST Order OF customer NO-ERROR. 
+    IF NOT AVAILABLE Order THEN 
+    DO:
+      RETURN.
+    END.
+    ELSE 
+    DO:
+      MESSAGE "Open orders exist for Customer " customer.custnum ".   Cannot delete."
+              VIEW-AS ALERT-BOX INFORMATION BUTTONS OK. 
+      RETURN ERROR.
+    END.
+  END.
+  ELSE 
+  DO:
+    MESSAGE "Outstanding Unpaid Invoice Exists, Cannot Delete" VIEW-AS ALERT-BOX INFORMATION BUTTONS OK.
+      RETURN ERROR.
+  END.
+END.
+ELSE 
+DO:
+  FIND FIRST Order OF customer NO-ERROR. 
+  IF NOT AVAILABLE Order THEN 
+  DO:
+    RETURN.
+  END.
+  ELSE 
+  DO:
+    MESSAGE "Open orders exist for Customer " customer.custnum ".   Cannot delete."
+      VIEW-AS ALERT-BOX INFORMATION BUTTONS OK. 
+    RETURN ERROR.
+  END.
+END.
+```
+- To minimize the coupling between data access statements
 
+Review the following code for an external procedure, based on the distributable application design guidelines and select the guideline the code follows.
+```
+  DEFINE OUTPUT PARAMETER TABLE FOR ttOrder.
 
+  /*Get rid of the old ttSalesRep records if they exist*/ 
+  EMPTY TEMP-TABLE ttOrder.
 
+  FOR EACH Order NO-LOCK:
+    CREATE ttOrder.
+    BUFFER-COPY Order TO ttOrder NO-ERROR.
+    ASSIGN ttOrder.ROWID = ROWID(Order).
+  END.
 
+END PROCEDURE.
+```
+- Put data access logic in a procedure, separate from the UI. 
 
+Review the following code based on the distributable application design guidelines and select the guideline the code follows.
+```
+/* Local Variable Definitions   */
+DEFINE VARIABLE hDataUtil AS HANDLE NO-UNDO.
 
+/* Main Block */
+RUN InitializeObjects.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* Procedure initializeObjects */
+RUN DataUtil.p PERSISTENT SET hDataUtil.
+RUN GetCustData IN hDataUtil (OUTPUT TABLE ttCustomer).
+```
+- Put data access logic in a procedure, separate from the UI.
 
