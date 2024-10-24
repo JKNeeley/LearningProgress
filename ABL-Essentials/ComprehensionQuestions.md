@@ -172,6 +172,24 @@ Which of the following is true about CATCH blocks?
 When an error occurs, what is the precedence used by the AVM to look for an error handler?
 - NO-ERROR option, CATCH block, Explicit ON-ERROR, Implicit ON-ERROR
 
+## Developing Modular Procedures
+Which of the following statements are true?
+- External procedures are independent, self-contained modules that can be called from other procedures.
+- Internal procedures can be reused multiple times within the containing procedure.
+- An internal procedure can access all variables and objects defined in the main procedure.
+- The RUN statement is used to execute both internal and external procedures
+- Persistent procedures require a handle to access them when needed.
+- Persistent procedures remain in memory for the duration of the session.
+
+Which statement is used to execute a procedure persistently?
+- RUN procedure-name PERSISTENT SET handle.
+
+Which of the following statements resets the handle variable "hEmpLib" to the unknown value?
+- DEFINE VARIABLE hEmpLib AS HANDLE NO-UNDO INITIAL ?.
+- ASSIGN hEmpLib = ?.
+
+Why should you delete persistent procedures?
+- Avoid memory leaks and free up system resources;
 
 
 
