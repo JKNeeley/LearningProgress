@@ -75,6 +75,44 @@ Which of the following is true about ROWID?
 - A function that returns a pointer to a record
 - A data type for variables that store row IDs
 
+## Creating, Updating, and Deleting Records
+What happens when the CREATE statement executes?
+- A new record is created in the database.
+- Default values are set if they are defined in the data dictionary.
+- The CREATE trigger executes if one exists.
+- A copy of the record is moved to the record buffer.
+
+How does the ASSIGN statement affect data?
+- Moves data into the RECORD buffer.
+
+What is the effect of deleting a parent record without deleting its children?
+- You create orphan records that can cause run-time errors, clutter the database, and increase overhead.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
