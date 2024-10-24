@@ -10,3 +10,6 @@ ABL Essentials provides ABL developers the foundation required to understand the
 - Develop modular code
 - Integrate business logic into an application
 Roughly 25 hours of learning
+
+## Problems
+- Try-It 5.1: I was unable to generate a compile listing due to a constant error saying my file was not found.
