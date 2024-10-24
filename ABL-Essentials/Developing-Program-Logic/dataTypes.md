@@ -1,15 +1,15 @@
 *Specify ABL data types you would use to hold the following values:*
-
-Value / Data type
-151 / integer
-151.19 / decimal
-One hundred fifty two / character
-True / logical
-10/10/04 / date
-NO / logical
-January, February, March / character
-December 31, 2001 / character
-365 / integer
+| Value | Data type |
+| -------- | ------- |
+| 151 | integer |
+| 151.19 | decimal |
+| One hundred fifty two | character |
+| True | logical |
+| 10/10/04 | date |
+| NO | logical |
+| January, February, March | character |
+| December 31, 2001 | character |
+| 365 | integer |
 
 Define a variable to be used as a counter that starts from zero.
 - define variable iCounter as integer initial 0 no-undo .
