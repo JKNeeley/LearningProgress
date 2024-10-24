@@ -7,8 +7,9 @@
     Author(s)   : Jade Neeley
   ----------------------------------------------------------------------*/
 
-define variable cWine as character 
-    initial "Zinfandel,Sake,Port,Chardonnay,Chianti,Merlot,Shiraz" no-undo.
+define variable cPhoneNum as character 
+    format "(999)999-9999" initial "7812802000" no-undo.
+define variable cAreaCode as character no-undo.
 
-message substitute("There are &1 entries in the list", num-entries(cWine)) skip(1) 
-    substitute("The third entry is &1", entry(3,cWine)) view-as alert-box.
+cAreaCode = substring(cPhoneNum,1,3).
+display "My area code is" cAreaCode format "x(3)" no-label.
