@@ -9,6 +9,7 @@ ABL Essentials provides ABL developers the foundation required to understand the
 - Handle errors
 - Develop modular code
 - Integrate business logic into an application
+
 Roughly 25 hours of learning
 
 ## Setup
